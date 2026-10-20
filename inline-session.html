@@ -108,13 +108,14 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       scene.addNode(solarSystem);
       scene.addNode(new SkyboxNode({url: 'media/textures/milky-way-4k.png'}));
 
-      function initXR() {
+        function initXR() {
         console.log("wir sind in initXR");
-        //TEST!!! 
-        xrButton = new WebXRButton({
         xrButton = new WebXRButton({
           onRequestSession: onRequestSession,
-          onEndSession: onEndSession
+          onEndSession: onEndSession,
+          textEnterXRTitle: "START AR",
+          textXRNotFoundTitle: "AR NOT FOUND",
+          textExitXRTitle: "EXIT  AR",
         });
         document.querySelector('header').appendChild(xrButton.domElement);
 
